@@ -67,7 +67,7 @@ export class EditarEntradaComponent implements OnInit
       this.abstract = reply.Abstract;
       this.body = reply.Body;
       this.carrera = reply.Carrera;
-      this.curso = reply.Curso;
+      this.curso = reply.IdCurso;
       this.fechaCrear = reply.FechaCrear;
       this.fechaMod = reply.FechaMod;
       this.idEntrada = reply.IdEntrada;
@@ -123,6 +123,7 @@ getComplementos(){
   this.apicomplementos.getCursos().subscribe((reply:any) => {
     console.log(reply);
     this.listCursos = reply;
+    console.log(this.listCursos);
   });
   //Carreras
   this.apicomplementos.getCarreras().subscribe((reply:any) => {
@@ -141,7 +142,8 @@ getCarrera(i){
 }
 
 getCurso(i){
-  this.curso = this.listCursos[i].Nombre;
+  this.curso = this.listCursos[i].IdCurso;
+  console.log(this.curso);
 }
 
 getTema(i){
@@ -173,7 +175,7 @@ deleteAutor(i){
   Carnets.splice(i);
 
   console.log(Carnets)
-  this.apiEntradaPropia.editEntry(this.idEntrada, this.titulo, this.abstract, this.body, Carnets[0].toString(), this.carrera, this.curso, this.tema, this.visible.toString()).subscribe((reply:any) => {
+  this.apiEntradaPropia.editEntry(this.idEntrada, this.titulo, this.abstract, this.body, Carnets.toString(), "4", "CE123", this.tema, this.visible.toString()).subscribe((reply:any) => {
     console.log(reply)
   });
 }

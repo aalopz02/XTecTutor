@@ -32,32 +32,7 @@
     <div class="full-bg-img">
       <div class="mask rgba-black-light flex-center">
         <div class="container text-center white-text">
-          
-          <div class="btn-group" mdbDropdown>
-            <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{carrera}}</button>
-            <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-              mdbWavesEffect></button>
-            <div class="dropdown-menu">
-              <a (click)="getCarrera(i)"  *ngFor="let element of listCarreras, let i = index" class="dropdown-item">{{element.Nombre}}</a>
-            </div>
-          </div>
-
-          <div class="btn-group" mdbDropdown>
-            <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{curso}}</button>
-            <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-              mdbWavesEffect></button>
-            <div class="dropdown-menu">
-              <<a (click)="getCurso(i)" *ngFor="let element of listCursos, let i = index" class="dropdown-item">{{element.Nombre}}</a>            </div>
-          </div>
-
-          <div class="btn-group" mdbDropdown>
-            <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{tema}}</button>
-            <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-              mdbWavesEffect></button>
-            <div class="dropdown-menu">
-              <a (click)="getTema(i)" *ngFor="let element of listTemas, let i = index" class="dropdown-item">{{element.Nombre}}</a>          </div>
-          </div>
-          <div class="white-text text-center wow fadeInUp">
+        
 
             <!--Material textarea-->
             <div class="md-form">
@@ -85,6 +60,31 @@
 
             <button type="button" mdbBtn color="indigo" rounded="true" data-toggle="modal" data-target="#basicExample"
   (click)="frame.show()" mdbWavesEffect>Agregar Co-autor</button>
+  <div class="btn-group" mdbDropdown>
+    <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{carrera}}</button>
+    <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+      mdbWavesEffect></button>
+    <div class="dropdown-menu">
+      <a (click)="getCarrera(i)"  *ngFor="let element of listCarreras, let i = index" class="dropdown-item">{{element.Nombre}}</a>
+    </div>
+  </div>
+
+  <div class="btn-group" mdbDropdown>
+    <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{curso}}</button>
+    <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+      mdbWavesEffect></button>
+    <div class="dropdown-menu">
+      <a (click)="getCurso(i)" *ngFor="let element of listCursos, let i = index" class="dropdown-item">{{element.Nombre}}</a>            </div>
+  </div>
+
+  <div class="btn-group" mdbDropdown>
+    <button type="button" mdbBtn color="indigo" class="waves-light" mdbWavesEffect>{{tema}}</button>
+    <button type="button" mdbDropdownToggle mdbBtn color="indigo" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+      mdbWavesEffect></button>
+    <div class="dropdown-menu">
+      <a (click)="getTema(i)" *ngFor="let element of listTemas, let i = index" class="dropdown-item">{{element.Nombre}}</a>          </div>
+  </div>
+  <div class="white-text text-center wow fadeInUp">
 
 <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
